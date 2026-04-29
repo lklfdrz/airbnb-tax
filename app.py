@@ -4,7 +4,7 @@ import streamlit as st
 
 from tax_logic.csv_parser import parse_airbnb_csv
 from tax_logic.revenue import filter_by_year
-from ui.components import render_disclaimer, render_empty_state, render_header
+from ui.components import render_disclaimer, render_empty_state, render_header, inject_css
 from ui.revenue_view import render_revenue_view
 from ui.sidebar import render_sidebar
 from ui.tax_view import render_tax_view
@@ -17,6 +17,7 @@ def main():
         layout="wide",
     )
 
+    inject_css()
     render_header()
     inputs = render_sidebar()
     render_disclaimer(location="sidebar")
